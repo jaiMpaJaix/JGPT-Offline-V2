@@ -242,6 +242,49 @@ function initModals() {
       });
     }
   }
+
+  // Update Guide & Changelog Dialog
+  const updateDialog = document.getElementById('update-dialog');
+  const openUpdateBtn = document.getElementById('openUpdateModalBtn');
+  const navUpdateBtn = document.getElementById('navUpdateBtn');
+  const closeUpdateBtn = document.getElementById('closeUpdateDialogBtn');
+  const confirmUpdateBtn = document.getElementById('confirmUpdateBtn');
+
+  if (updateDialog) {
+    const showUpdate = () => updateDialog.showModal();
+
+    if (openUpdateBtn) openUpdateBtn.addEventListener('click', showUpdate);
+    if (navUpdateBtn) navUpdateBtn.addEventListener('click', showUpdate);
+
+    if (closeUpdateBtn) {
+      closeUpdateBtn.addEventListener('click', () => updateDialog.close());
+    }
+
+    if (confirmUpdateBtn) {
+      confirmUpdateBtn.addEventListener('click', () => {
+        updateDialog.close();
+        const downloadSection = document.getElementById('unduh');
+        if (downloadSection) {
+          setTimeout(() => {
+            downloadSection.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      });
+    }
+
+    updateDialog.addEventListener('click', (e) => {
+      const rect = updateDialog.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) {
+        updateDialog.close();
+      }
+    });
+  }
 }
 
 /**

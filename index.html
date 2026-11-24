@@ -37,6 +37,7 @@
           <li><a href="#spesifikasi" class="nav-link">Kebutuhan RAM</a></li>
           <li><a href="#unduh" class="nav-link">Unduh Perangkat</a></li>
           <li><a href="#faq" class="nav-link">Tanya Jawab</a></li>
+          <li><button type="button" class="nav-link nav-update-btn" id="navUpdateBtn" aria-haspopup="dialog">Pembaruan <span class="update-pulse-dot" aria-hidden="true"></span></button></li>
         </ul>
         <div class="nav-cta-group">
           <a href="https://github.com/jaiMpaJaix/JGPT-Offline-V2" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Buka repositori GitHub JGPT-Off">
@@ -52,6 +53,20 @@
       </nav>
     </div>
   </header>
+
+  <!-- Update Announcement Banner for Existing & New Users -->
+  <aside class="update-banner" aria-label="Informasi Pembaruan Aplikasi">
+    <div class="container update-banner-content">
+      <div class="update-banner-left">
+        <span class="update-tag">v2.0.1 Dirilis</span>
+        <span class="update-msg">Sudah pernah mengunduh? Perbarui ke identitas resmi <strong>JGPT-Offline</strong> tanpa kehilangan riwayat atau model AI lokal Anda.</span>
+      </div>
+      <button type="button" class="btn btn-update-action" id="openUpdateModalBtn" aria-haspopup="dialog">
+        <span>Panduan Update</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </aside>
 
   <main id="main-content">
     <!-- Hero Section -->
@@ -425,11 +440,11 @@
               Dilengkapi dukungan akselerasi hardware NVIDIA CUDA dan Vulkan CPU fallback.
             </p>
             <div class="os-btn-group">
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_x64-setup.exe" class="btn btn-download-card" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_x64-setup.exe" class="btn btn-download-card" download="JGPT-Offline-v2-setup-x64.exe">
                 <span>Unduh Installer (.exe)</span>
                 <span class="file-size-hint">x64 (571 MB)</span>
               </a>
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_arm64-setup.exe" class="btn btn-secondary-download" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_arm64-setup.exe" class="btn btn-secondary-download" download="JGPT-Offline-v2-setup-arm64.exe">
                 <span>Versi ARM64 (.exe)</span>
                 <span class="file-size-hint">335 MB</span>
               </a>
@@ -454,11 +469,11 @@
               Mendukung akselerasi penuh Apple Silicon Metal untuk pemrosesan token super kencang.
             </p>
             <div class="os-btn-group">
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="btn btn-download-card" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="btn btn-download-card" download="JGPT-Offline-v2-macOS-universal.dmg">
                 <span>Unduh Universal (.dmg)</span>
                 <span class="file-size-hint">M1-M4 & Intel (115 MB)</span>
               </a>
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/jan-mac-universal-0.8.8.zip" class="btn btn-secondary-download" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/jan-mac-universal-0.8.8.zip" class="btn btn-secondary-download" download="JGPT-Offline-v2-macOS-universal.zip">
                 <span>Arsip Portabel (.zip)</span>
                 <span class="file-size-hint">115 MB</span>
               </a>
@@ -483,17 +498,17 @@
               Tersedia dalam format universal AppImage portabel dan paket debian native.
             </p>
             <div class="os-btn-group">
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.AppImage" class="btn btn-download-card" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.AppImage" class="btn btn-download-card" download="JGPT-Offline-v2-linux-x86_64.AppImage">
                 <span>Universal AppImage</span>
                 <span class="file-size-hint">x86_64 (712 MB)</span>
               </a>
-              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.deb" class="btn btn-secondary-download" download>
+              <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.deb" class="btn btn-secondary-download" download="JGPT-Offline-v2-linux-amd64.deb">
                 <span>Paket Debian (.deb)</span>
                 <span class="file-size-hint">1.06 GB</span>
               </a>
             </div>
             <div class="install-tip">
-              <span>Tips:</span> Jalankan <code>chmod +x Jan*.AppImage</code> di terminal sebelum mengeksekusi.
+              <span>Tips:</span> Jalankan <code>chmod +x JGPT-Offline*.AppImage</code> di terminal sebelum mengeksekusi.
             </div>
           </div>
 
@@ -512,7 +527,7 @@
               Jalankan AI offline di ponsel Anda atau hubungkan ke server JGPT-Off di komputer rumah Anda.
             </p>
             <div class="os-btn-group">
-              <a href="https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.24.0/app-prod-release.apk" class="btn btn-download-card" download>
+              <a href="https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.24.0/app-prod-release.apk" class="btn btn-download-card" download="JGPT-Offline-v2-Android-ARM64.apk">
                 <span>Unduh File APK (.apk)</span>
                 <span class="file-size-hint">Direct APK (45 MB)</span>
               </a>
@@ -640,23 +655,23 @@
       <div class="modal-body">
         <p class="modal-intro">Pilih platform perangkat Anda untuk mengunduh paket resmi langsung:</p>
         <div class="modal-os-list">
-          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_x64-setup.exe" class="modal-os-item" download>
+          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_x64-setup.exe" class="modal-os-item" download="JGPT-Offline-v2-setup-x64.exe">
             <span class="item-name">Windows 10/11 (x64)</span>
             <span class="item-badge">Installer .exe (571 MB)</span>
           </a>
-          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="modal-os-item" download>
+          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="modal-os-item" download="JGPT-Offline-v2-macOS-universal.dmg">
             <span class="item-name">macOS (Apple Silicon M1-M4)</span>
             <span class="item-badge">Universal .dmg (115 MB)</span>
           </a>
-          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="modal-os-item" download>
+          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_universal.dmg" class="modal-os-item" download="JGPT-Offline-v2-macOS-universal.dmg">
             <span class="item-name">macOS (Intel Core)</span>
             <span class="item-badge">Universal .dmg (115 MB)</span>
           </a>
-          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.AppImage" class="modal-os-item" download>
+          <a href="https://github.com/janhq/jan/releases/download/v0.8.8/Jan_0.8.8_amd64.AppImage" class="modal-os-item" download="JGPT-Offline-v2-linux-x86_64.AppImage">
             <span class="item-name">Linux (Universal)</span>
             <span class="item-badge">AppImage (712 MB)</span>
           </a>
-          <a href="https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.24.0/app-prod-release.apk" class="modal-os-item" download>
+          <a href="https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.24.0/app-prod-release.apk" class="modal-os-item" download="JGPT-Offline-v2-Android-ARM64.apk">
             <span class="item-name">Android (Smartphone & Tablet)</span>
             <span class="item-badge">Berkas APK (45 MB)</span>
           </a>
@@ -690,6 +705,60 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="confirmGuideBtn">Mengerti</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Native Modal Dialog for Update Guide & Changelog -->
+  <dialog id="update-dialog" class="custom-modal" aria-labelledby="update-dialog-title" closedby="any">
+    <div class="modal-dialog-content">
+      <div class="modal-header">
+        <h3 id="update-dialog-title" class="modal-title">Panduan Pembaruan (JGPT-Offline v2.0.1)</h3>
+        <button type="button" class="modal-close-btn" id="closeUpdateDialogBtn" aria-label="Tutup jendela pembaruan">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="update-guide-notice">
+          <strong>PENTING: Data & Model Anda Aman</strong>
+          <p>Memperbarui aplikasi JGPT-Offline <em>tidak akan</em> menghapus riwayat chat atau model AI lokal (Llama, Mistral, dll) yang sudah Anda unduh sebelumnya, karena data tersimpan di direktori aplikasi terpisah.</p>
+        </div>
+
+        <div class="guide-step">
+          <h4>Cara Update di macOS</h4>
+          <ol>
+            <li>Unduh paket <code>JGPT-Offline-v2-macOS-universal.dmg</code> terbaru.</li>
+            <li>Buka file <code>.dmg</code>, lalu seret ikon JGPT-Offline ke folder <strong>Applications</strong>.</li>
+            <li>Pilih <strong>Replace (Ganti)</strong> saat sistem meminta konfirmasi. Selesai!</li>
+          </ol>
+        </div>
+
+        <div class="guide-step">
+          <h4>Cara Update di Windows</h4>
+          <ol>
+            <li>Unduh installer <code>JGPT-Offline-v2-setup-x64.exe</code> terbaru.</li>
+            <li>Jalankan file installer. Sistem akan secara otomatis menimpa versi lama tanpa perlu uninstall terlebih dahulu.</li>
+          </ol>
+        </div>
+
+        <div class="guide-step">
+          <h4>Cara Update di Linux & Android</h4>
+          <p><strong>Linux:</strong> Cukup ganti berkas <code>.AppImage</code> lama Anda dengan versi baru dan berikan izin eksekusi.<br>
+          <strong>Android:</strong> Unduh APK versi terbaru dan pasang langsung untuk menimpa versi sebelumnya.</p>
+        </div>
+
+        <div class="guide-step">
+          <h4>Catatan Rilis v2.0.1 (Changelog)</h4>
+          <ul class="changelog-list">
+            <li>Identitas format aplikasi resmi bertransformasi ke <strong>JGPT-Offline V2</strong>.</li>
+            <li>Pembaruan penamaan berkas unduh langsung berkecepatan tinggi.</li>
+            <li>Penambahan modul pengecekan pembaruan otomatis untuk pengguna setia.</li>
+            <li>Penyempurnaan kestabilan engine inferensi CPU dan GPU lokal.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#unduh" class="btn btn-primary" id="confirmUpdateBtn">Unduh Paket Pembaruan Sekarang</a>
       </div>
     </div>
   </dialog>

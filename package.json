@@ -1,0 +1,27 @@
+{
+  "name": "jgpt-offline-v2",
+  "version": "1.0.0",
+  "description": "JGPT-Offline V2: 100% Offline AI Assistant for All Devices",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "build": "echo 'Web ready for GitHub Pages'",
+    "package:mac": "npx electron-builder --mac",
+    "package:win": "npx electron-builder --win",
+    "package:linux": "npx electron-builder --linux"
+  },
+  "keywords": [
+    "ai",
+    "offline-ai",
+    "chatgpt-alternative",
+    "local-llm",
+    "llama",
+    "mistral",
+    "electron"
+  ],
+  "author": "jaiMpaJaix",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "electron": "^33.2.0"
+  }
+}
